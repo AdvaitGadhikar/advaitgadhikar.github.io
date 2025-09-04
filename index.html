@@ -1,87 +1,381 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Advait Gadhikar</title>
+  
+  <!-- This is the Google Site verification tag you wanted to keep -->
   <meta name="google-site-verification" content="nE15D4IQuhpbq911DjoG8NvWvkLi6euDJixacyOZVtE" />
+  
   <meta name="author" content="Advait Gadhikar">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon" type="image/png" href="images/seal_icon.png">
+
+  <!-- Google Fonts for an elegant, academic feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Basic Page Setup */
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #f8f9fa;
+      color: #343a40;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Main container for content */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Header section with profile info and picture */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .header-photo {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .header-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .header-photo img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Typography */
+    .name {
+      font-family: 'Lora', serif;
+      font-size: 2.5em;
+      font-weight: 500;
+      color: #212529;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 1.8em;
+      color: #212529;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+    }
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    
+    strong {
+        font-weight: 600;
+        color: #212529;
+    }
+
+    /* Links section with icons */
+    .links {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.95em;
+      color: #495057;
+    }
+    
+    .links a:hover {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .links svg {
+      width: 20px;
+      height: 20px;
+      fill: #495057;
+      transition: fill 0.3s ease;
+    }
+    
+    .links a:hover svg {
+        fill: #007bff;
+    }
+
+    /* Publications and News sections styling */
+    .list {
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    .list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+    }
+
+    .list li:last-child {
+        border-bottom: none;
+    }
+    
+    .publication-thumbnail {
+        flex-shrink: 0;
+        width: 160px;
+    }
+
+    .publication-thumbnail img {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #dee2e6;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .publication-thumbnail img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .publication-text {
+        flex-grow: 1;
+    }
+
+    .list .date {
+        flex-shrink: 0;
+        width: auto;
+        color: #6c757d;
+        font-weight: 600;
+        font-size: 0.9em;
+        margin-bottom: 4px;
+    }
+    
+    .list .description {
+        flex-grow: 1;
+    }
+    
+    .list .spotlight {
+        background-color: #e7f3ff;
+        border-left: 4px solid #007bff;
+        padding: 15px;
+        margin: 12px 0;
+        border-radius: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #dee2e6;
+      font-size: 0.9em;
+      color: #6c757d;
+    }
+
+    /* Responsive Design for smaller screens */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-text {
+        order: 2;
+      }
+      
+      .header-photo {
+        order: 1;
+        margin-bottom: 20px;
+      }
+      
+      .links {
+        justify-content: center;
+      }
+
+      .list li {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .publication-thumbnail {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Advait Gadhikar</name>
-              </p>
-              <p>I am a third year PhD student at the CISPA Helmholtz Center for Information Security in Saarbrücken, advised by <a href="https://sites.google.com/view/rebekkaburkholz/"> Dr. Rebekka Burkholz</a>. I work on building provable algorithms for deep learning and am currently interested in algorithms related to sparsity in neural nets.
-                Specifically I am interested in the Lottery Ticket Hypothesis and how it can help identify the underlying structure of a learnt network.
-              </p> 
-              <p>I have completed my Masters from the <a href="https://www.ece.cmu.edu/">ECE Department</a>, Carnegie Mellon University in Pittsburgh, PA. During this time I worked on building Optimization algorithms with theoretical guarantees for training Machine Learning models in large scalable systems with the Optimization, Probability and Learning Group (OPAL) advised by <a href="https://www.andrew.cmu.edu/user/gaurij/">Prof. Gauri Joshi</a>.</p>
-              <p>
-                Prior to my Masters at CMU, I was an undergraduate at <a href="https://www.bits-pilani.ac.in/Goa/">BITS Pilani</a> in India. As an undergraduate, I was fortunate to work with <a href="https://ece.iisc.ac.in/~rajivs/#/"> Prof Rajiv Soundararajan</a> at the Indian Institute of Science on my Bachelor Thesis. Here, I worked on designing Image Quality Assessment models that are able to perceive images like the Human Visual System.
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:advait.gadhikar@cispa.de">Email</a> &nbsp/&nbsp
-                <!-- <a href="https://www.youtube.com/c/AnkurDeka/videos">YouTube</a>&nbsp/&nbsp -->
-                <!-- <a href="data/JonBarron-CV.pdf">CV</a> &nbsp/&nbsp -->
-                <!-- <a href="data/JonBarron-bio.txt">Biography</a> &nbsp/&nbsp -->
-                <a href="https://www.linkedin.com/in/advaitgadhikar/">LinkedIn</a> &nbsp/&nbsp
-                <a href="https://github.com/AdvaitGadhikar">GitHub</a> &nbsp/&nbsp
-                <a href="https://docs.google.com/document/d/1LZImtrtO61S3NbdRR1NJILOU9vVVUy9l0H4n126_KV4/edit?usp=sharing">CV</a>
-                <!-- <a href=""> -->
-              </p>
-              <p> Feel free to get in touch with me, always looking forward to insightful discussions!</p>
+  <div class="container">
+    <header class="header">
+      <div class="header-text">
+        <p class="name">Advait Gadhikar</p>
+        <div class="links">
+          <a href="mailto:advait.gadhikar@cispa.de">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.51l8 5 8-5V6H4zm0 10h16v-9.3l-8 5-8-5V16z"/></svg>
+            Email
+          </a>
+          <a href="https://docs.google.com/document/d/1LZImtrtO61S3NbdRR1NJILOU9vVVUy9l0H4n126_KV4/edit?usp=sharing" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-2 16h-2v-2h2v2zm-2-4h-2v-2h2v2zm0-4H8V8h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2 4h-2v-2h2v2zm-1-7V3.5L18.5 9H13z"/></svg>
+            CV
+          </a>
+          <a href="https://www.linkedin.com/in/advaitgadhikar/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-12 5v9h2.5v-4.5a2 2 0 0 1 4 0V17h2.5v-5a4.5 4.5 0 0 0-9 0zM8.5 8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/AdvaitGadhikar" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.475 2 2 6.475 2 12a10 10 0 0 0 6.838 9.506c.5.094.687-.219.687-.485 0-.238-.009-.869-.014-1.706-2.781.603-3.368-1.34-3.368-1.34a2.65 2.65 0 0 0-1.11-1.463c-.906-.62.069-.606.069-.606a2.094 2.094 0 0 1 1.522 1.031c.903 1.547 2.372 1.1 2.95.84.09-.653.353-1.1.637-1.353-2.25-.256-4.616-1.125-4.616-5.003 0-1.1.39-2.003 1.031-2.706a3.75 3.75 0 0 1 .1-2.668s.85-.272 2.781 1.028a9.6 9.6 0 0 1 5.07- .134c1.93-1.3 2.78-1.028 2.78-1.028.45 1.222.15 2.38.1 2.668a3.84 3.84 0 0 1 1.031 2.706c0 3.887-2.37 4.744-4.625 5.003.363.31.684.922.684 1.856 0 1.353-.012 2.444-.012 2.775 0 .269.184.584.69.484A10 10 0 0 0 22 12C22 6.475 17.525 2 12 2Z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="header-photo">
+        <a href="images/advait.jpg"><img alt="profile photo" src="images/advait.jpg"></a>
+      </div>
+    </header>
 
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/advait.jpg"><img style="width:80%;max-width:100%" alt="profile photo" src="images/advait.jpg" class="hoverZoomLink rounded-corners"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Updates</heading>
-              <p>
-                <ul>
-                  <li>[March 2025] Our work <a href="https://arxiv.org/abs/2412.20875"> 'Attention Is All You Need For Mixture-of-Depths Routing' </a> is accepted at the SCOPE workshop in ICLR 2025.</li>
-                  <li>[June 2024] I will be spending the next six months with Bosch AI, developing Sparse Mixture of Expert models for efficient inference.</li>
-                  <li>[Jan 2024] Our paper on <a href="https://openreview.net/pdf?id=qODvxQ8TXW"> 'Masks, Signs, and Learning Rate Rewinding'</a> is accepted at ICLR 2024 for a spotlight presentation.</li>
-                  <li>[April 2023] Our paper on <a href="https://arxiv.org/abs/2210.02412"> 'Why Random Pruning Is All You Need to Start Sparse'</a> is accepted at ICML 2023.</li>
-                  <li>[October 2022] Check out our work on <a href="https://arxiv.org/abs/2210.02411"> Dynamical Isometry for Residual Networks </a>.
-                  <li>[April 2022] Started my PhD with Rebekka Burkholz</li>
-                  <li>[September 2021] Our work with Prof. Gauri Joshi's group at CMU, 'Leveraging Spatial and Temporal Correlations in Sparsified Mean Estimation', got accepted at NEURIPS 2021! 
-                  <li>[Jan 2021] Our paper <a href="https://arxiv.org/abs/2102.04487"> AdaQuantFL</a> on Adaptive Quantization in Federated Learning got accepted in <a href="https://2021.ieeeicassp.org/">ICASSP 2021</a>. </li>
-                  <li>[Dec 2020] Graduated with MS in ECE from CMU</li>
-                  <li>[Oct 2020] Submitted our work on <a href="http://www.andrew.cmu.edu/user/gaurij/adaquantfl.pdf">Adaptive Gradient Quantization in Federated Learning</a> to ICASSP 2021 and is under review</li>
-                  <li>[August 2020] Interned over the Summer with the Video Systems team at Qualcomm on video denoising algorithms</li>
-                  <li>[May 2020] Joined <a href="https://www.andrew.cmu.edu/user/gaurij/Group.html"> OPAL </a> as a Graduate Research Assistant</li>
-                  <li>[Jan 2020] Started as a Teaching Assistant for <a href="http://www.cs.cmu.edu/~bhiksha/">Prof Bhiksha's</a> course on Introduction to Deep Learning<a href="https://deeplearning.cs.cmu.edu/F20/index.html"></a></li>
-                  <li>[August 2019] Started as a Masters student at CMU</li>
-                  <li>[May 2019] Graduated from BITS Pilani, Goa Campus</li>
-                  <li>[Dec 2018] Completed Bachelor Thesis at the Indian Institute of Science</li>
-                </ul>
-              </p>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:left;font-size:small;">
-                Thanks to Jon Barron for providing the nice website template <a href="https://github.com/jonbarron/jonbarron_website">website template</a>.
-                
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
+    <main>
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I am a final-year PhD student at the <strong>CISPA Helmholtz Center for Information Security</strong> in Saarbrücken, advised by <a href="https://sites.google.com/view/rebekkaburkholz/">Dr. Rebekka Burkholz</a>. My research focuses on building provable algorithms for deep learning, with a current interest in sparsity and the Lottery Ticket Hypothesis to understand the underlying structure of learned neural networks.
+        </p> 
+        <p>
+          I completed my Master's from the <a href="https://www.ece.cmu.edu/">ECE Department</a> at <strong>Carnegie Mellon University</strong>, where I worked with the Optimization, Probability and Learning Group (OPAL) advised by <a href="https://www.andrew.cmu.edu/user/gaurij/">Prof. Gauri Joshi</a> on optimization algorithms with theoretical guarantees for large-scale machine learning systems.
+        </p>
+        <p>
+          Prior to CMU, I was an undergraduate at <a href="https://www.bits-pilani.ac.in/Goa/">BITS Pilani</a>, India. For my bachelor's thesis, I had the privilege of working with <a href="https://ece.iisc.ac.in/~rajivs/#/">Prof. Rajiv Soundararajan</a> at the <strong>Indian Institute of Science</strong> on designing Image Quality Assessment models that perceive images similarly to the Human Visual System.
+        </p>
+        <p>Feel free to get in touch—I am always looking forward to insightful discussions!</p>
+      </section>
 
+      <section>
+        <h2>News & Timeline</h2>
+        <!-- The news/timeline list structure is different, it does not need thumbnails -->
+        <ul class="list">
+            <li><div class="date">June 2024</div> <div class="description">Started a six-month research internship with <strong>Bosch AI</strong>, developing Sparse Mixture of Expert models for efficient inference.</div></li>
+            <li><div class="date">April 2022</div> <div class="description">Started my PhD with Dr. Rebekka Burkholz at <strong>CISPA</strong>.</div></li>
+            <li><div class="date">Dec 2020</div> <div class="description">Graduated with an MS in ECE from <strong>Carnegie Mellon University</strong>.</div></li>
+            <li><div class="date">Aug 2020</div> <div class="description">Interned with the Video Systems team at <strong>Qualcomm</strong> on video denoising algorithms.</div></li>
+            <li><div class="date">May 2020</div> <div class="description">Joined the <strong>OPAL Group</strong> at CMU as a Graduate Research Assistant.</div></li>
+            <li><div class="date">Aug 2019</div> <div class="description">Started as a Master's student at <strong>CMU</strong>.</div></li>
+            <li><div class="date">May 2019</div> <div class="description">Graduated from <strong>BITS Pilani, Goa Campus</strong>.</div></li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2>Publications</h2>
+        <ul class="list">
+          <li class="spotlight">
+            <div class="publication-thumbnail">
+                <img src="https://placehold.co/160x100/e7f3ff/007bff?text=Teaser+Image" alt="Teaser image for Attention Is All You Need For Mixture-of-Depths Routing paper">
+            </div>
+            <div class="publication-text">
+              <div class="date">ICLR 2025 (Workshop)</div>
+              <div class="description">
+                <strong><a href="https://arxiv.org/abs/2412.20875">'Attention Is All You Need For Mixture-of-Depths Routing'</a></strong><br>
+                Accepted at the SCOPE workshop.
+              </div>
+            </div>
+          </li>
+          <li class="spotlight">
+            <div class="publication-thumbnail">
+                <img src="https://placehold.co/160x100/e7f3ff/007bff?text=Teaser+Image" alt="Teaser image for Masks, Signs, and Learning Rate Rewinding paper">
+            </div>
+            <div class="publication-text">
+              <div class="date">ICLR 2024 (Spotlight)</div>
+              <div class="description">
+                <strong><a href="https://openreview.net/pdf?id=qODvxQ8TXW">'Masks, Signs, and Learning Rate Rewinding'</a></strong><br>
+                Presented as a spotlight.
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="publication-thumbnail">
+                <img src="https://placehold.co/160x100/ffffff/343a40?text=Teaser+Image" alt="Teaser image for Why Random Pruning Is All You Need to Start Sparse paper">
+            </div>
+            <div class="publication-text">
+              <div class="date">ICML 2023</div>
+              <div class="description">
+                <strong><a href="https://arxiv.org/abs/2210.02412">'Why Random Pruning Is All You Need to Start Sparse'</a></strong>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="publication-thumbnail">
+                <!-- No image here, the space will collapse -->
+            </div>
+            <div class="publication-text">
+              <div class="date">Preprint 2022</div>
+              <div class="description">
+                <strong><a href="https://arxiv.org/abs/2210.02411">'Dynamical Isometry for Residual Networks'</a></strong>
+              </div>
+            </div>
+          </li>
+           <li>
+            <div class="publication-thumbnail"></div>
+            <div class="publication-text">
+              <div class="date">NeurIPS 2021</div>
+              <div class="description">
+                <strong>'Leveraging Spatial and Temporal Correlations in Sparsified Mean Estimation'</strong>
+              </div>
+            </div>
+          </li>
+           <li>
+            <div class="publication-thumbnail"></div>
+            <div class="publication-text">
+              <div class="date">ICASSP 2021</div>
+              <div class="description">
+                <strong><a href="https://arxiv.org/abs/2102.04487">'AdaQuantFL: Adaptive Quantization in Federated Learning'</a></strong>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      
+    </main>
+
+    <footer class="footer">
+      <p>
+        Thanks to <a href="https://www.jonbarron.org/">Jon Barron</a> for the original <a href="https://github.com/jonbarron/jonbarron_website">website template</a>.
+      </p>
+    </footer>
+  </div>
 </body>
-              
-
 </html>
+
