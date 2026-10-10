@@ -206,6 +206,66 @@
         border-radius: 4px;
     }
 
+    /* Talks section with photo slideshow */
+    .list .description {
+        min-width: 0;
+    }
+
+    .talk-title {
+        font-weight: 600;
+        color: #212529;
+    }
+
+    .slideshow {
+        position: relative;
+        margin-top: 15px;
+    }
+
+    .slides {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        padding-bottom: 8px;
+    }
+
+    .slides a {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    .slides img {
+        display: block;
+        height: 320px;
+        width: auto;
+        border-radius: 6px;
+        border: 1px solid #dee2e6;
+    }
+
+    .slide-btn {
+        position: absolute;
+        top: 160px;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background-color: rgba(255,255,255,0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        color: #212529;
+        font-size: 1.4em;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .slide-btn:hover {
+        color: #007bff;
+    }
+
+    .slide-btn.prev { left: 8px; }
+    .slide-btn.next { right: 8px; }
+
     /* Footer */
     .footer {
       text-align: center;
@@ -242,6 +302,14 @@
       }
       .publication-thumbnail {
         width: 100%;
+      }
+
+      .slides img {
+        height: 220px;
+      }
+
+      .slide-btn {
+        top: 110px;
       }
     }
   </style>
@@ -280,7 +348,7 @@
       <section>
         <h2>About Me</h2>
         <p>
-          I am a researcher at <strong>MSR, India</strong> working on retrieval models. I recently submitted my PhD thesis at the <strong>CISPA Helmholtz Center for Information Security</strong> in Saarbrücken, where I was advised by <a href="https://sites.google.com/view/rebekkaburkholz/">Dr. Rebekka Burkholz</a>. My research focused on building provable algorithms for deep learning, with a particular focus on sparse training, quantization and efficient optimization methods in general.
+          I am a researcher at <strong>Qualcomm AI Research</strong> working on model efficiency. Before that, I spent 5 wonderful months working on building efficient retrieval models at <strong>MSR India</strong>. I recently submitted my PhD thesis at the <strong>CISPA Helmholtz Center for Information Security</strong> in Saarbrücken, where I was advised by <a href="https://sites.google.com/view/rebekkaburkholz/">Dr. Rebekka Burkholz</a>. My research focused on building provable algorithms for deep learning, with a particular focus on sparse training, quantization and efficient optimization methods in general.
         </p> 
         <p>
           I completed my Master's from the <a href="https://www.ece.cmu.edu/">ECE Department</a> at <strong>Carnegie Mellon University</strong>, where I worked with the Optimization, Probability and Learning Group (OPAL) advised by <a href="https://www.andrew.cmu.edu/user/gaurij/">Prof. Gauri Joshi</a> on optimization algorithms with theoretical guarantees for large-scale machine learning systems.
@@ -295,6 +363,7 @@
         <h2>News & Timeline</h2>
         <!-- The news/timeline list structure is different, it does not need thumbnails -->
         <ul class="list">
+            <li><div class="date">Oct 2026</div> <div class="description">I joined <strong>Qualcomm AI Research</strong> as a researcher, working on model efficiency.</div></li>
             <li><div class="date">May 2026</div> <div class="description">I started as a Researcher at <strong>Microsoft Research, India</strong>, with the ReFoRM team, working on retrieval models.</div></li>
             <li><div class="date">May 2025</div> <div class="description">Spent the summer at <strong>Microsoft Research, Cambridge</strong>, working on Post Training Quantization with <a href="https://prolearner.github.io/riccardograzzi.github.io/">Riccardo Grazzi</a> and <a href="https://scholar.google.com/citations?user=l8dX3ssAAAAJ&hl=en">James Hensman</a>.</div></li>
             <li><div class="date">June 2024</div> <div class="description">I will be doing a research internship with <strong>Bosch AI</strong>, developing Sparse Mixture of Expert models for efficient inference.</div></li>
@@ -306,18 +375,55 @@
             <li><div class="date">May 2019</div> <div class="description">Graduated from <strong>BITS Pilani, Goa Campus</strong>.</div></li>
         </ul>
       </section>
-      
+
+      <section>
+        <h2>Talks</h2>
+        <ul class="list">
+          <li>
+            <div class="description">
+              <div class="date">Sept 2026</div>
+              <span class="talk-title">What is AI and what can I do about it?</span> &mdash; Invited talk for high school students at <strong>Fergusson College</strong>, Pune, organized by the Computer Science department. It was a real joy to speak to students in my hometown!
+              <div class="slideshow">
+                <button class="slide-btn prev" aria-label="Previous photo">&lsaquo;</button>
+                <div class="slides">
+                  <a href="images/fergusson-talk/1.jpg"><img src="images/fergusson-talk/1.jpg" alt="Giving the talk at Fergusson College" loading="lazy"></a>
+                  <a href="images/fergusson-talk/2.jpg"><img src="images/fergusson-talk/2.jpg" alt="Slide: Same doubt, better question" loading="lazy"></a>
+                  <a href="images/fergusson-talk/3.jpg"><img src="images/fergusson-talk/3.jpg" alt="Slide: Is the AI doom real?" loading="lazy"></a>
+                  <a href="images/fergusson-talk/4.jpg"><img src="images/fergusson-talk/4.jpg" alt="Slide: Skills AI makes more valuable, not less" loading="lazy"></a>
+                  <a href="images/fergusson-talk/5.jpg"><img src="images/fergusson-talk/5.jpg" alt="With the faculty of Fergusson College" loading="lazy"></a>
+                  <a href="images/fergusson-talk/6.jpg"><img src="images/fergusson-talk/6.jpg" alt="Group photo with the students and faculty" loading="lazy"></a>
+                  <a href="images/fergusson-talk/7.jpg"><img src="images/fergusson-talk/7.jpg" alt="Chatting with students after the talk" loading="lazy"></a>
+                </div>
+                <button class="slide-btn next" aria-label="Next photo">&rsaquo;</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       <section>
         <h2>Publications</h2>
         <ul class="list">
           <li>
             <div class="publication-thumbnail">
+              <img src="images/acdc.png">
+            </div>
+            <div class="publication-text">
+              <div class="date">NeurIPS 2026</div>
+              <div class="description">
+                <strong><a href="https://openreview.net/pdf?id=rD5TBB47Zb">AC/DC on a Budget &ndash; Alternating Sparse Phases</a></strong>
+                <div class="authors">Rahul Nittala, <strong>Advait Gadhikar</strong>, Tom Jacobs, and Rebekka Burkholz</div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="publication-thumbnail">
               <img src="images/wlib.png">
             </div>
             <div class="publication-text">
-              <div class="date">MemFM Workshop at ICML 2026</div>
+              <div class="date">NeurIPS 2026</div>
               <div class="description">
-                <strong><a href="https://openreview.net/pdf?id=IFnzabrAbl">Prune to Protect: Faster Training and Enhanced Privacy by Dynamic Data Pruning</a></strong>
+                <strong><a href="https://openreview.net/pdf?id=aqIbhSL3JS">Prune to Protect: Faster Training and Enhanced Privacy by Dynamic Data Pruning</a></strong>
                 <div class="authors">Chinmay Joshi, <strong>Advait Gadhikar</strong>, Celia Rubio-Madrigal, Aneet Kumar Dutta, Mridula Singh, and Rebekka Burkholz</div>
               </div>
             </div>
@@ -482,6 +588,16 @@
     </main>
 
   </div>
+  <script>
+    document.querySelectorAll('.slideshow').forEach(function (show) {
+      var slides = show.querySelector('.slides');
+      function step(dir) {
+        slides.scrollBy({ left: dir * slides.clientWidth * 0.8 });
+      }
+      show.querySelector('.prev').addEventListener('click', function () { step(-1); });
+      show.querySelector('.next').addEventListener('click', function () { step(1); });
+    });
+  </script>
 </body>
 </html>
 
