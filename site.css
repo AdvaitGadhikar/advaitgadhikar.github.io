@@ -348,16 +348,6 @@ h2.label {
 .slide-btn.prev { left: 8px; }
 .slide-btn.next { right: 8px; }
 
-/* ---------- Footer ---------- */
-
-.site-footer {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 24px 40px;
-  color: var(--muted);
-  font-size: 0.85rem;
-}
-
 /* ---------- Phones ---------- */
 
 @media (max-width: 640px) {
@@ -367,7 +357,6 @@ h2.label {
 
   main { padding: 36px 20px 56px; }
 
-  .site-footer { padding: 0 20px 32px; }
 
   .hello { gap: 16px; }
   .hello img { width: 76px; height: 76px; }
