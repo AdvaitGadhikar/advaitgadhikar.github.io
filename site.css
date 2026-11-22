@@ -278,6 +278,11 @@ h2.label {
 
 .selected .title:hover { border-color: var(--accent); }
 
+.selected .authors strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .selected .tag {
   display: block;
   color: var(--accent);
