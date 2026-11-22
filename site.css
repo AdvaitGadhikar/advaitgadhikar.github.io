@@ -121,7 +121,8 @@ h1.page-title {
   margin: 0 0 36px;
 }
 
-h1.page-title + .rows { margin-top: 30px; }
+h1.page-title + .rows,
+h1.page-title + .talk { margin-top: 30px; }
 
 h2.label {
   font-size: 0.78rem;
