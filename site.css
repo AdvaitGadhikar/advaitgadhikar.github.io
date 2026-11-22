@@ -277,6 +277,14 @@ h2.label {
 }
 
 .selected .title:hover { border-color: var(--accent); }
+
+.selected .tag {
+  display: block;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
 .selected .authors { color: var(--muted); font-size: 0.92rem; }
 
 /* ---------- Talks ---------- */
